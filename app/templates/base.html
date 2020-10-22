@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Notebook</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </head>
+
+    <body>
+        <div class="site-container">
+
+            <div class="menu-container">
+
+                <div class="notebook-container">
+
+                    <h1>Notebooks</h1>
+
+                    <hr>
+
+                    <div class="notebooks" data-notebooks>
+                        <!-- <div class="notebook menu-item">HTML/CSS</div>
+                        <div class="notebook menu-item">JS</div>
+                        <div class="notebook menu-item">Python</div>
+                        <div class="notebook menu-item">Computer Science</div> -->
+                    </div>
+
+                    <div class="create-container">
+                        <form action="" class="form-create-notebook" data-new-notebook-form>
+                            <input 
+                                type="text"
+                                class="create notebook"
+                                data-new-notebook-input
+                                placeholder="New Notebook Name"
+                                aria-label="New Notebook Name"
+                            />
+                            <button class="btn notebook">+</button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="chapter-container">
+
+                    <h1>Chapters</h1>
+
+                    <hr>
+
+                    <div class="chapters">
+                        <div class="chapter menu-item">HTML Foundations</div>
+                        <div class="chapter menu-item">CSS Foundations</div>
+                        <div class="chapter menu-item">SASS Foundations</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+    
+</html>
