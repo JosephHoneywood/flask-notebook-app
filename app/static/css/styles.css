@@ -10,45 +10,48 @@ h1, h2 {
 
 h1 {
     font-size: 20px;
+    padding-left: 10px;
 }
 
 h2 {
     font-size: 14px;
 }
 
+hr {
+    padding-left: 2px;
+}
+
 .site-container {
     background-color: #DCDCDD;
     width: 99%;
+    height: 98%;
     margin: auto;
     display: flex;
-    padding: 5px;
-    border: 1px solid gold;
     border-radius: 2px;
-    /* flex-wrap: wrap; */
 }
 
 .menu-container {
     width: 30%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-color: whitesmoke;
     display: flex;
     align-content: stretch;
     align-items: stretch;
-    padding: 4px;
+    padding-left: 4px;
+    border-radius: 3px;
 }
 
 .notebook-container {
-    border: 1px solid green;
     padding: 4px;
-    flex-grow: 1;
-    background-color: tomato;
+    width: 50%;
+    box-shadow: 3px 0 5px -2px #888;
+    border-radius: 2px;
 }
 
 .chapter-container {
-    border: 1px solid sandybrown;
     padding: 4px;
-    flex-grow: 1;
-    background-color: teal;
+    width: 50%;
+    box-shadow: 3px 0 5px -2px #888
 }
 
 .notebooks, .chapters {
@@ -63,6 +66,33 @@ h2 {
     flex-grow: 1;
     width: 100%;
     margin: 2px;
-    border: 1px solid olivedrab;
-    padding: 2px;
+    background-color: #46494C;
+    padding: 4px;
+    border-radius: 3px;
+    color: whitesmoke;
+}
+
+.menu-item.active {
+    background-color: #1985A1;
+}
+
+.menu-item:hover {
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+.create-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.create.notebook {
+    margin: 2px;
+}
+
+.btn:hover {
+    background-color: grey;
 }
