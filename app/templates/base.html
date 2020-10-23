@@ -9,6 +9,8 @@
     <body>
         <div class="site-container">
 
+            {% block form %}{% endblock %}
+
             <div class="menu-container">
 
                 <div class="notebook-container">
@@ -56,6 +58,13 @@
             </div>
 
             <div class="note-container">
+
+                <div class="menu-bar-container">
+                    <a href ="/createnotebook" class="create btn">Create Notebook</a>
+                    <a href ="/createchapter" class="create btn">Create Chapter</a>
+                    <a href ="/createnote" class="create btn">Create Note</a>
+                </div>
+
                 <div class="note-area">
                     <div class="note">
 

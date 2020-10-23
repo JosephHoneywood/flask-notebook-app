@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block form %}
+
+<div class="overlay">
+    <h1>Create Chapter</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.notebook.label }}<br>
+            {{ form.notebook(size=32) }}<br>
+            {% for error in form.notebook.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.chapter.label }}<br>
+            {{ form.chapter(size=32) }}<br>
+            {% for error in form.chapter.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+
+{% endblock %}
