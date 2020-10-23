@@ -2,6 +2,7 @@ body {
     background-color: #46494C;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    z-index: 0;
 }
 
 h1, h2 {
@@ -21,13 +22,26 @@ hr {
     padding-left: 2px;
 }
 
+.overlay {
+    z-index: 1;
+    position: absolute;
+    background-color: goldenrod;
+    border-radius: 5px;
+    padding: 8px;
+    top: 30%;
+    left: 40%;
+    box-shadow: 3px 3px 20px -2px #666;
+}
+
 .site-container {
     background-color: #DCDCDD;
     width: 99%;
     height: 99%;
     margin: auto;
     display: flex;
+    position: relative;
     border-radius: 2px;
+    z-index: 0;
 }
 
 .menu-container {
@@ -101,7 +115,24 @@ hr {
     padding: 8px;
     width: 80%;
     display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
     /* border: 1px solid black; */
+}
+
+.create.btn {
+    border: 1px solid black;
+    padding: 2px;
+    text-decoration: none;
+    margin: 2px;
+    border-radius: 2px;
+    background-color: #46494C;
+    color: whitesmoke;
+}
+
+.create.btn:hover {
+    background-color: #1985A1;
+    border: 1px solid #1985A1;
 }
 
 .note-area {
@@ -110,6 +141,7 @@ hr {
     /* flex-wrap: wrap; */
     width: 100%;
     overflow-y: auto;
+    margin-top: 5px;
 }
 
 .note {
