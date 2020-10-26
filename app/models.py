@@ -5,7 +5,7 @@ class Notebooks(db.Model):
     notebook_id = db.Column(db.Integer, primary_key=True)
     notebook_name = db.Column(db.String(64), index=True, unique=True)
     notebook_created_at_date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    chapters = db.relationship('Chapter', backref='notebook', lazy='dynamic')
+    chapters = db.relationship('Chapters', backref='notebook', lazy='dynamic')
 
     def __repr__(self):
         return '<Notebook {}>'.format(self.notebook_name)
@@ -15,7 +15,7 @@ class Chapters(db.Model):
     notebook_id = db.Column(db.Integer, db.ForeignKey('notebooks.notebook_id'))
     chapter_name = db.Column(db.String(120))
     chapter_created_at_date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    notes = db.relationship('Note', backref='chapter', lazy='dynamic')
+    notes = db.relationship('Notes', backref='chapter', lazy='dynamic')
 
     def __repr__(self):
         return '<Chapter {}>'.format(self.chapter_name)
