@@ -7,16 +7,16 @@
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
-            {{ form.notebook.label }}<br>
-            {{ form.notebook(size=32) }}<br>
-            {% for error in form.notebook.errors %}
+            {{ form.notebook_name.label }}<br>
+            {{ form.notebook_name(size=32) }}<br>
+            {% for error in form.notebook_name.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.chapter.label }}<br>
-            {{ form.chapter(size=32) }}<br>
-            {% for error in form.chapter.errors %}
+            {{ form.chapter_name.label }}<br>
+            {{ form.chapter_name(size=32) }}<br>
+            {% for error in form.chapter_name.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>

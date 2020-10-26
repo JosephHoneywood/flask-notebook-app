@@ -93,6 +93,7 @@ hr {
 .menu-item:hover {
     font-weight: bolder;
     color: whitesmoke;
+    background-color: black;
 }
 
 .create-container {
