@@ -1,14 +1,20 @@
+import os
+import json
+
 from app import app, db
 from app.models import Notebooks, Chapters, Notes
 from app.forms import CreateNotebookForm, CreateChapterForm, CreateNoteForm
 from flask import render_template, redirect
+
+json_data = "/Users/josephhoneywood/Desktop/Home/V26/flask-notebook-app/app/static/js/data.json"
+local_data = json.load(open(json_data))
 
 @app.route('/')
 @app.route('/index')
 def index():
     notebook_list = [notebook.notebook_name for notebook in Notebooks.query.all()]
     print(notebook_list)
-    return render_template('index.html', notebook_list=notebook_list)
+    return render_template('index.html', notebook_list=notebook_list, local_data=local_data)
 
 @app.route('/createnotebook', methods=['GET', 'POST'])
 def create_notebook():
