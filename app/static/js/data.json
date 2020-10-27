@@ -1,55 +1,89 @@
-{
-     "notebooks" : [
-         {
-             "name":"HTML",
-             "content":[
-                 {
-                     "chapter_name": "HTML Foundations",
-                     "chapter_contents": ["A", "B", "C"]
-                 },
-                 {
-                    "chapter_name": "HTML Intermediate",
-                    "chapter_contents": ["D", "E", "F"]
-                 },
-                 {
-                    "chapter_name": "HTML Advanced",
-                    "chapter_contents": ["G", "H", "I"]
-                 }
-             ]
-         },
-         {
-            "name":"CSS",
-            "content":[
-                {
-                    "chapter_name": "CSS Foundations",
-                    "chapter_contents": ["A", "B", "C"]
-                },
-                {
-                   "chapter_name": "CSS Intermediate",
-                   "chapter_contents": ["D", "E", "F"]
-                },
-                {
-                   "chapter_name": "CSS Intermediate",
-                   "chapter_contents": ["G", "H", "I"]
-                }
-            ]
-        },
-        {
-            "name":"Cooking",
-            "content":[
-                {
-                    "chapter_name": "Vegan Recipes",
-                    "chapter_contents": ["A", "B", "C"]
-                },
-                {
-                   "chapter_name": "Thai Recipes",
-                   "chapter_contents": ["D", "E", "F"]
-                },
-                {
-                   "chapter_name": "Indian Recipes",
-                   "chapter_contents": ["G", "H", "I"]
-                }
-            ]
-        }
-     ]
- }
+[
+    {
+        "name": "HTML",
+        "content": [
+            {
+                "chapter_name": "HTML Foundations",
+                "chapter_contents": [
+                    "A",
+                    "B",
+                    "C"
+                ]
+            },
+            {
+                "chapter_name": "HTML Intermediate",
+                "chapter_contents": [
+                    "D",
+                    "E",
+                    "F"
+                ]
+            },
+            {
+                "chapter_name": "HTML Advanced",
+                "chapter_contents": [
+                    "G",
+                    "H",
+                    "I"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "CSS",
+        "content": [
+            {
+                "chapter_name": "CSS Foundations",
+                "chapter_contents": [
+                    "A",
+                    "B",
+                    "C"
+                ]
+            },
+            {
+                "chapter_name": "CSS Intermediate",
+                "chapter_contents": [
+                    "D",
+                    "E",
+                    "F"
+                ]
+            },
+            {
+                "chapter_name": "CSS Intermediate",
+                "chapter_contents": [
+                    "G",
+                    "H",
+                    "I"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Cooking",
+        "content": [
+            {
+                "chapter_name": "Vegan Recipes",
+                "chapter_contents": [
+                    "A",
+                    "B",
+                    "C"
+                ]
+            },
+            {
+                "chapter_name": "Thai Recipes",
+                "chapter_contents": [
+                    "D",
+                    "E",
+                    "F"
+                ]
+            },
+            {
+                "chapter_name": "Indian Recipes",
+                "chapter_contents": [
+                    "G",
+                    "H",
+                    "I"
+                ]
+            }
+        ]
+    }
+]

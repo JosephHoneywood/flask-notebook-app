@@ -6,7 +6,7 @@ from app.models import Notebooks, Chapters, Notes
 from app.forms import CreateNotebookForm, CreateChapterForm, CreateNoteForm
 from flask import render_template, redirect
 
-json_data = "/Users/josephhoneywood/Desktop/Home/V26/flask-notebook-app/app/static/js/data.json"
+json_data = "/Users/josephhoneywood/Desktop/Home/V26/flask-notebook-app/app/static/js/data_2.json"
 local_data = json.load(open(json_data))
 
 @app.route('/')
