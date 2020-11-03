@@ -1,6 +1,8 @@
 const notebook_container = document.querySelector('.notebooks');
 const chapter_container = document.querySelector('.chapters')
 const note_container = document.querySelector('.note-area')
+// const note_element = document.querySelectorAll('.note')
+// const note_title = document.querySelectorAll('.note-title')
 
 //Find out what the user clicks in Notebooks
 notebook_container.addEventListener('click', e => {
@@ -29,6 +31,16 @@ chapter_container.addEventListener('click', e => {
         });
     };
 })
+
+// Find out if a user has clicked a note
+note_container.addEventListener('click', e => {
+    console.log(e.target.className)
+    if (e.target.className === 'note-title') {
+        console.log(e.target.id)
+        note_id = e.target.id
+        window.location.href = `/displaynote/${note_id}`
+    };
+});
 
 function get_chapters(notebook_name) {
     //Get the chapters, triggered by a click on a notebook
@@ -71,16 +83,12 @@ function render_notes(notes) {
         //Create a new note title area
         const divNoteTitleElement = document.createElement('div')
         divNoteTitleElement.classList.add('note-title-area')
-
-        //Create a new note title
+        
+        //Create a new note title and attach the mongoID reference
         const titleElement = document.createElement('h3')
         titleElement.classList.add('note-title')
         titleElement.innerText = element['note-title']
-
-        //Create a new edit button
-        const editElement = document.createElement('button')
-        editElement.classList.add('note-edit')
-        editElement.innerText = 'Edit'
+        titleElement.id = element['_id']['$oid']
 
         //Create a HR
         const hrElement = document.createElement('hr')
@@ -108,7 +116,7 @@ function render_notes(notes) {
         footerElement.append(hashtagElement, modifiedDateElement)
 
         //Append header children to their parent
-        divNoteTitleElement.append(titleElement, editElement)
+        divNoteTitleElement.append(titleElement)
 
         //Append all elements to the note element
         divElement.append(divNoteTitleElement, hrElement, bodyElement, footerElement)

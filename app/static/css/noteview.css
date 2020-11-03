@@ -1,0 +1,81 @@
+body {
+    /* background-color: #0E2643; */
+    background-color: #063a72;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.note-container {
+    background: whitesmoke;
+    border: 1px solid black;
+    display: block;
+    height: 90%;
+    width: 98%;
+    max-width: 98%;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    /* height: 98%; */
+}
+
+.note-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+    fill: #0E2643;
+    /* margin-left: 3rem; */
+}
+
+svg:hover {
+    opacity: 50%;
+    fill: red;
+    pointer-events: visible;
+    cursor: pointer;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+.note-body {
+    height: 76%;
+    overflow-y: scroll;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+button {
+    padding: 0.3rem;
+    margin: 0 0.2rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.edit {
+    background-color: #7DCFB6;
+}
+
+button.delete {
+    background-color: #f98585;
+}

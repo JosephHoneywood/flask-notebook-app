@@ -1,10 +1,11 @@
 import os
 import json
 import requests
-from bson import json_util
+from datetime import date
+from bson import json_util, objectid
 
 from app import app
-from app.forms import CreateNotebookForm, CreateChapterForm, CreateNoteForm
+from app.forms import CreateNoteForm
 from config import db_mongo
 from flask import render_template, redirect, request, jsonify
 from app.tools.mongo_tools import get_notebooks_from_mongo, push_document_to_mongo
@@ -16,53 +17,32 @@ def index():
 
     return render_template('index.html', notebook_list=notebooks)
 
-@app.route('/createnotebook', methods=['GET', 'POST'])
-def create_notebook():
-    form = CreateNotebookForm()
-
-    if form.validate_on_submit():
-        print(f'Form received with {form.notebook_name.data}')
-
-        new_notebook = form.notebook_name.data
-        existing_notebooks = get_notebooks_from_mongo()
-
-        if new_notebook in existing_notebooks:
-            print('Notebook already exists.')
-
-        else:
-            print(f'{new_notebook} will be added to mongo')
-            document = {"notebook":f"{new_notebook}"}
-            push_document_to_mongo(document)
-
-        return redirect ('/index')
-
-    return render_template('createnotebook.html', form=form)
-
-@app.route('/createchapter', methods=['GET', 'POST'])
-def create_chapter():
-    form = CreateChapterForm()
-    if form.validate_on_submit():
-        print(f'Form received with {form.notebook_name.data} and {form.chapter_name.data}')
-        notebook = form.notebook_name.data
-        new_chapter = form.chapter_name.data
-        existing_notebooks = get_notebooks_from_mongo()
-
-        if notebook not in existing_notebooks:
-            print('Notebook does not exist. Please enter the chapter in an existing notebook.')
-        else:
-            document = {"notebook":f"{notebook}", "chapter":f"{new_chapter}"}
-            push_document_to_mongo(document)
-
-        return redirect ('/index')
-    return render_template('createchapter.html', form=form)
-
 @app.route('/createnote', methods=['GET', 'POST'])
 def create_note():
     form = CreateNoteForm()
+    notebooks = get_notebooks_from_mongo()
     if form.validate_on_submit():
-        print(f'Form received with {form.notebook.data} and {form.chapter.data} and {form.tags.data} and {form.body.data}')
+
+        print(f'Form received with {form.notebook_name.data} and {form.chapter_name.data} and {form.tags.data} and {form.body.data}')
+        notebook = form.notebook_name.data
+        chapter = form.chapter_name.data
+        title = form.title.data
+        body = form.body.data
+        tags = form.tags.data
+        date_created = date.today()
+
+        document = {"notebook": f"{notebook}",
+                    "chapter":f"{chapter}",
+                    "note-title":f"{title}",
+                    "note-body":f"{body}",
+                    "note-tags":f"{tags}",
+                    "note-created-date":f"{date_created}"
+                    }
+
+        push_document_to_mongo(document)
+
         return redirect ('/index')
-    return render_template('createnote.html', form=form)
+    return render_template('createnote.html', form=form, notebook_list=notebooks)
 
 @app.route('/_getchapters', methods=['POST', 'GET'])
 def get_chapters():
@@ -88,3 +68,23 @@ def get_notes():
 
     return jsonify(json_util.dumps(notes))
 
+@app.route('/displaynote/<id>')
+def display_notes(id):
+
+    #With the ID, render a new view with the note loaded to the page.
+    note_data = db_mongo.notebooks_refactor.find_one({'_id': objectid.ObjectId(id)})
+
+    title = note_data['note-title']
+    body = note_data['note-body']
+
+    print(note_data)
+
+    return render_template('displaynote.html', id=id, title=title, body=body)
+
+@app.route('/deletenote', methods=['POST'])
+def delete_note():
+    id = request.form['id_to_del']
+    
+    db_mongo.notebooks_refactor.delete_one({'_id': objectid.ObjectId(id)})
+
+    return 'ok'
