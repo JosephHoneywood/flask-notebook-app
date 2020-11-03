@@ -60,11 +60,9 @@ def get_chapters():
 def get_notes():
     #from the request, get the chapter that the user has selected
     jsdata = request.form['send_chapter_name']
-    print(jsdata)
 
     #with the chapter, filter mongo for the associated notes
     notes = list(db_mongo.notebooks_refactor.find({'chapter':jsdata}))
-    print(notes)
 
     return jsonify(json_util.dumps(notes))
 
@@ -77,8 +75,6 @@ def display_notes(id):
     title = note_data['note-title']
     body = note_data['note-body']
 
-    print(note_data)
-
     return render_template('displaynote.html', id=id, title=title, body=body)
 
 @app.route('/deletenote', methods=['POST'])
@@ -86,5 +82,14 @@ def delete_note():
     id = request.form['id_to_del']
     
     db_mongo.notebooks_refactor.delete_one({'_id': objectid.ObjectId(id)})
+
+    return 'ok'
+
+@app.route('/updatenote', methods=['POST'])
+def update_note():
+    id = request.form['id_to_upd']
+    updated_body = request.form['updated_content']
+
+    db_mongo.notebooks_refactor.update({'_id': objectid.ObjectId(id)}, {'$set': {'note-body': updated_body}})
 
     return 'ok'

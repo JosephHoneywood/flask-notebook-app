@@ -142,6 +142,7 @@ form textarea#body {
     font-weight: bolder;
     color: whitesmoke;
     background-color: black;
+    cursor: pointer;
 }
 
 .create-container {
