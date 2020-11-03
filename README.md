@@ -1,3 +1,3 @@
 # flask-notebook-app
 
-![](name-of-giphy.gif)
+![](notebook demo.gif)
