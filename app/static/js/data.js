@@ -96,7 +96,9 @@ function render_notes(notes) {
         //Create a new body
         const bodyElement = document.createElement('p')
         bodyElement.classList.add('note-body')
-        bodyElement.innerText = element['note-body']
+        // bodyElement.innerText = element['note-body']
+        // bodyElement.textContent = element['note-body']
+        bodyElement.innerHTML = element['note-body']
 
         //Create a new note footer area
         const footerElement = document.createElement('div')

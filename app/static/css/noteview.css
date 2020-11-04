@@ -7,15 +7,24 @@ body {
     box-sizing: border-box;
     margin: 0;
     max-height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
+}
+
+h1 {
+    margin: 0;
+    /* font-family: 'Roboto', serif; */
+}
+
+hr {
+    margin: 0.3rem;
 }
 
 .note-container {
     background: whitesmoke;
     border: 1px solid black;
     display: block;
-    height: 90%;
-    width: 98%;
+    /* height: 90%; */
+    /* width: 98%; */
     max-width: 98%;
     border-radius: 5px;
     padding: 1rem 2rem;
@@ -28,6 +37,10 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+
+/* .placeholder-text {
+    color: grey;
+} */
 
 svg {
     height: 1.5rem;
@@ -49,15 +62,26 @@ pre {
 }
 
 .note-body {
-    height: 76%;
-    overflow-y: scroll;
-    white-space: pre-wrap;
+    /* height: 76%; */
+    /* position: relative; */
+    /* overflow-y: scroll; */
+    /* white-space: pre-wrap; */
+    margin: 0;
+}
+
+.panel {
+    margin-bottom: 0px;
+}
+
+.text-content {
+    margin: 0;
 }
 
 .note-footer {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 1rem;
+    justify-content: space-between;
+    /* padding-right: 1rem; */
+    margin-top: 0.5rem;
 }
 
 button {
