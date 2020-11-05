@@ -1,8 +1,6 @@
 const notebook_container = document.querySelector('.notebooks');
 const chapter_container = document.querySelector('.chapters')
 const note_container = document.querySelector('.note-area')
-// const note_element = document.querySelectorAll('.note')
-// const note_title = document.querySelectorAll('.note-title')
 
 //Find out what the user clicks in Notebooks
 notebook_container.addEventListener('click', e => {
@@ -96,8 +94,6 @@ function render_notes(notes) {
         //Create a new body
         const bodyElement = document.createElement('p')
         bodyElement.classList.add('note-body')
-        // bodyElement.innerText = element['note-body']
-        // bodyElement.textContent = element['note-body']
         bodyElement.innerHTML = element['note-body']
 
         //Create a new note footer area

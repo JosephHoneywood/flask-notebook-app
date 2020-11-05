@@ -1,18 +1,17 @@
+@import "colors.css";
+
 body {
-    /* background-color: #0E2643; */
-    background-color: #063a72;
+    background-color: var(--lightblack);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
     margin: 0;
     max-height: 100%;
-    /* overflow: hidden; */
 }
 
 h1 {
     margin: 0;
-    /* font-family: 'Roboto', serif; */
 }
 
 hr {
@@ -24,12 +23,12 @@ hr {
     border: 1px solid black;
     display: block;
     /* height: 90%; */
-    /* width: 98%; */
+    width: 98%;
     max-width: 98%;
     border-radius: 5px;
     padding: 1rem 2rem;
     margin: 1rem;
-    /* height: 98%; */
+    max-height: 700px;
 }
 
 .note-header {
@@ -38,21 +37,17 @@ hr {
     justify-content: space-between;
 }
 
-/* .placeholder-text {
-    color: grey;
-} */
 
 svg {
     height: 1.5rem;
     width: 1.5rem;
     margin-right: 1rem;
-    fill: #0E2643;
-    /* margin-left: 3rem; */
+    fill: var(--lightblack);
 }
 
 svg:hover {
     opacity: 50%;
-    fill: red;
+    fill: var(--spotgreen);
     pointer-events: visible;
     cursor: pointer;
 }
@@ -62,11 +57,11 @@ pre {
 }
 
 .note-body {
-    /* height: 76%; */
-    /* position: relative; */
-    /* overflow-y: scroll; */
-    /* white-space: pre-wrap; */
+    min-height: 550px;
+    max-height: 550px;
     margin: 0;
+    overflow-y: scroll;
+    padding: 1rem;
 }
 
 .panel {
@@ -80,7 +75,6 @@ pre {
 .note-footer {
     display: flex;
     justify-content: space-between;
-    /* padding-right: 1rem; */
     margin-top: 0.5rem;
 }
 
@@ -98,7 +92,7 @@ button:hover {
 }
 
 button.edit {
-    background-color: #7DCFB6;
+    background-color: var(--spotgreen);
 }
 
 button.delete {
@@ -110,6 +104,5 @@ button.save {
 }
 
 .hide {
-    /* visibility: hidden; */
     display: none;
 }

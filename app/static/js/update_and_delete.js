@@ -6,30 +6,24 @@ const note_text = document.querySelector('.text-content');
 
 const note_id = note_container.id;
 
-edit_btn.addEventListener('click', e => {
-    console.log('I am edit and I was clicked')
-
+let edit = function() {
+    $('.note-body').summernote(
+        {focus: true,
+         maxwidth: 500,
+         height: 500,
+         maxheight: 500
+        });
     edit_btn.classList.toggle('hide')
     save_btn.classList.toggle('hide')
-
-    note_text.setAttribute('contenteditable', "true")
-    note_text.focus()
-    note_text.style.backgroundColor = "#DCDCDC"  
-
-});
-
-save_btn.addEventListener('click', e => {
-    console.log('I am save and I was clicked')
-    save_updated_note()
-    
-    save_btn.classList.toggle('hide')
+  };
+  
+let save = function() {
+    let markup = $('.note-body').summernote('code');
+    $('.note-body').summernote('destroy');
+    save_updated_note(markup);
     edit_btn.classList.toggle('hide')
-
-    note_text.style.backgroundColor = 'whitesmoke'
-    note_text.setAttribute('contenteditable', 'false')
-    note_text.blur()
-
-});
+    save_btn.classList.toggle('hide')
+  };
 
 
 delete_btn.addEventListener('click', e => {
@@ -38,17 +32,18 @@ delete_btn.addEventListener('click', e => {
     if (confirm("Are you sure you want to delete the note? This cant be reversed!")) {
         $.post( "/deletenote" , {
             id_to_del : note_id
-        });
+        }).done(
+            window.location.href = `/index`
+        );
       };
 });
 
 
-function save_updated_note() {
+function save_updated_note(markup) {
     console.log('Time to save!')
     console.log(`Updating ${note_id}`)
-    let note_body = note_text.innerText
     $.post( "/updatenote", {
         id_to_upd : note_id,
-        updated_content : note_body
+        updated_content : markup
     });
 };
