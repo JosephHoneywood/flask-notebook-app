@@ -1,8 +1,10 @@
+@import "colors.css";
+
 body {
-    background-color: #0E2643;
+    background-color: var(--lightblack);
+    background-size: cover;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    z-index: 0;
 }
 
 h1, h2 {
@@ -19,104 +21,52 @@ h2 {
 }
 
 h3 {
-    margin-bottom: 2px;
+    margin-bottom: 0px;
+    margin-top: 0;
 }
 
 hr {
-    padding-left: 2px;
-}
-
-.overlay {
-    z-index: 1;
-    position: absolute;
-    background-color: #3664fc;
-    border-radius: 5px;
-    padding: 8px;
-    top: 1%;
-    left: 5%;
+    border: 1px solid var(--lightgray);
     width: 90%;
-    box-shadow: 3px 0 5px -2px #666;
-    color: whitesmoke;
 }
-
-.meta-info-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.meta-info-container > p {
-    width: 20%;
-}
-
-form input {
-    background-color: #fafafa;
-    -webkit-border-radius: 3px;
-       -moz-border-radius: 3px;
-            border-radius: 3px;
-    border: 1px solid #cccccc;
-    padding: 5px;
-    margin-top: 5px;
-    font-size: 1.1em;
-    width: 80%;
-}
-
-form input#submit {
-    width: 100px;
-}
-
-form textarea#body {
-    width: 100%;
-    height: 400px;
-    background-color: #fafafa;
-    -webkit-border-radius: 3px;
-       -moz-border-radius: 3px;
-            border-radius: 3px;
-    border: 1px solid #cccccc;
-    margin-bottom: 2px;
-    margin-top: 5px;
-    padding: 5px;
-    font-size: 1.1em;
-  }
 
 .site-container {
-    background-color: #0E2643;
+    background-color: #121212;
     width: 99%;
     height: 99%;
     margin: auto;
     display: flex;
     position: relative;
     border-radius: 2px;
-    z-index: 0;
 }
 
 .menu-container {
-    width: 30%;
-    /* border: 1px solid black; */
-    background-color: whitesmoke;
+    width: 20%;
+    background-color: var(--lightblack);
     display: flex;
     align-content: stretch;
     align-items: stretch;
-    padding-left: 4px;
     border-radius: 3px;
+}
+
+.menu-container h1 {
+    color: white;
 }
 
 .notebook-container {
     padding: 4px;
     width: 50%;
-    box-shadow: 3px 0 5px -2px #888;
     border-radius: 2px;
 }
 
 .chapter-container {
     padding: 4px;
     width: 50%;
-    box-shadow: 3px 0 5px -2px #888
 }
 
 .notebooks, .chapters {
-    background-color: whitesmoke;
+    background-color: var(--lightblack);
+    color: white;
     border-radius: 2px;
     padding: 2px;
     display: flex;
@@ -127,7 +77,7 @@ form textarea#body {
     flex-grow: 1;
     width: 100%;
     margin: 2px;
-    background-color: #5087ca;
+    background-color: var(--lightblack);
     padding: 4px;
     padding-left: 6px;
     border-radius: 3px;
@@ -135,30 +85,13 @@ form textarea#body {
 }
 
 .menu-item.active {
-    background-color: #1985A1;
+    color: var(--spotgreen);
 }
 
 .menu-item:hover {
     font-weight: bolder;
-    color: whitesmoke;
-    background-color: black;
+    color: var(--spotgreen);
     cursor: pointer;
-}
-
-.create-container {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-    background-color: whitesmoke;
-}
-
-.create.notebook {
-    margin: 2px;
-}
-
-.btn:hover {
-    background-color: grey;
 }
 
 .note-container {
@@ -167,22 +100,19 @@ form textarea#body {
     display: flex;
     flex-wrap: wrap;
     overflow-y: scroll;
-    /* border: 1px solid black; */
 }
 
 .create.btn {
-    border: 1px solid #5a91d5;
     padding: 2px;
     text-decoration: none;
     margin: 2px;
     border-radius: 2px;
-    background-color: #5a91d5;
-    color: whitesmoke;
+    background-color: var(--lightblack);
+    color: white;
 }
 
 .create.btn:hover {
-    background-color: black;
-    border: 1px solid black;
+    color: var(--spotgreen);
 }
 
 .note-area {
@@ -210,14 +140,22 @@ form textarea#body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin-top: 0.4rem;
+    padding: 0.5 0 0 0;
 }
 
 .note-title {
     cursor: pointer;
 }
 
+.note > hr {
+    border: 1px solid grey;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
 .note-title:hover {
-    color: #f98585;
+    color: var(--spotgreen);
 }
 
 .note-edit {
@@ -225,11 +163,16 @@ form textarea#body {
 }
 
 p.note-body {
-    height: 6rem;
+    height: 8rem;
     margin: 0;
-    max-height: 6rem;
-    overflow: hidden;
+    max-height: 8rem;
+    /* overflow: hidden; */
+    overflow-y: scroll;
     margin-bottom: 10px;
+}
+
+.note-body > p {
+    margin: 0.5rem;
 }
 
 .note-footer-area {
@@ -247,16 +190,16 @@ p.note-body {
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: white #46494C
+    scrollbar-color: white var(--spotgreen);
   }
   *::-webkit-scrollbar {
     width: 6px;
   }
   *::-webkit-scrollbar-track {
-    background: #DCDCDD
+    background: black;
   }
   *::-webkit-scrollbar-thumb {
-    background-color: #46494C;
+    background-color: var(--spotgreen);
     border-radius: 20px;
-    border: 3px solid #46494C
+    border: 3px solid var(--spotgreen);
   }
