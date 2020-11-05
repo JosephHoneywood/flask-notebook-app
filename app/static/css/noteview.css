@@ -22,13 +22,13 @@ hr {
     background: whitesmoke;
     border: 1px solid black;
     display: block;
-    /* height: 90%; */
     width: 98%;
     max-width: 98%;
     border-radius: 5px;
     padding: 1rem 2rem;
     margin: 1rem;
-    max-height: 700px;
+    height: 95%;
+    /* max-height: 700px; */
 }
 
 .note-header {
@@ -58,7 +58,7 @@ pre {
 
 .note-body {
     min-height: 550px;
-    max-height: 550px;
+    /* max-height: 550px; */
     margin: 0;
     overflow-y: scroll;
     padding: 1rem;
