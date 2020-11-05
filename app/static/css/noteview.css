@@ -58,7 +58,7 @@ pre {
 
 .note-body {
     min-height: 550px;
-    /* max-height: 550px; */
+    max-height: 550px;
     margin: 0;
     overflow-y: scroll;
     padding: 1rem;

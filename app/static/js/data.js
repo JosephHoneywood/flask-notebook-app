@@ -40,22 +40,22 @@ note_container.addEventListener('click', e => {
     };
 });
 
-function get_chapters(notebook_name) {
-    //Get the chapters, triggered by a click on a notebook
-    $.getJSON("/static/js/data_2.json", function(data){
-        console.log(data)
-        let chapters = data.filter(function(chapter){
-            return chapter.name == notebook_name;
-        });
-        chapters = chapters[0].content;
-        let chapter_names = [];
-        for (chapter in chapters) {
-            chapter_names.push(chapters[chapter].chapter_name);
-        };
-        console.log(chapter_names);
-        render_chapters(chapter_names);
-    });
-};
+// function get_chapters(notebook_name) {
+//     //Get the chapters, triggered by a click on a notebook
+//     $.getJSON("/static/js/data_2.json", function(data){
+//         console.log(data)
+//         let chapters = data.filter(function(chapter){
+//             return chapter.name == notebook_name;
+//         });
+//         chapters = chapters[0].content;
+//         let chapter_names = [];
+//         for (chapter in chapters) {
+//             chapter_names.push(chapters[chapter].chapter_name);
+//         };
+//         console.log(chapter_names);
+//         render_chapters(chapter_names);
+//     });
+// };
 
 // Render all chapters
 function render_chapters(chapters) {
@@ -85,7 +85,7 @@ function render_notes(notes) {
         //Create a new note title and attach the mongoID reference
         const titleElement = document.createElement('h3')
         titleElement.classList.add('note-title')
-        titleElement.innerText = element['note-title']
+        titleElement.innerText = element['note_title']
         titleElement.id = element['_id']['$oid']
 
         //Create a HR
@@ -94,7 +94,7 @@ function render_notes(notes) {
         //Create a new body
         const bodyElement = document.createElement('p')
         bodyElement.classList.add('note-body')
-        bodyElement.innerHTML = element['note-body']
+        bodyElement.innerHTML = element['note_body']
 
         //Create a new note footer area
         const footerElement = document.createElement('div')
@@ -103,12 +103,12 @@ function render_notes(notes) {
         //Create new tags
         const hashtagElement = document.createElement('div')
         hashtagElement.classList.add('note-tags')
-        hashtagElement.innerText = String(element['note-tags'])
+        hashtagElement.innerText = String(element['note_tags'])
 
         //Create new date
         const modifiedDateElement = document.createElement('div')
         modifiedDateElement.classList.add('note-date-info')
-        modifiedDateElement.innerText = element['note-created-date']
+        modifiedDateElement.innerText = element['note_created_date']
 
         //Append footer children to their parent
         footerElement.append(hashtagElement, modifiedDateElement)
