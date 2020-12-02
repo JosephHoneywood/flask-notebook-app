@@ -9,10 +9,8 @@ Lots to still do and the styling is a mess but some of the core functionality is
 ## Pressing TODOs:
 
 - Search capability allowing search by tags, titles or note content
-- Replace the textbox editor for a WYSIWYG editor like Summernote
-- Lots of CSS cleanup and repo cleanup
-- Move CREATE new note feature into something more consistent with the app
-- Data validation and delete confirmation
+~~- Replace the textbox editor for a WYSIWYG editor like Summernote ~~
+- Lots of CSS cleanup and repo cleanup 
+~~- Move CREATE new note feature into something more consistent with the app~~
+~~- Data validation and delete confirmation~~
 - Tags are clickable and trigger onclick searches
-
-![](notebookdemo.gif)
