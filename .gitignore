@@ -1,0 +1,6 @@
+app/__pycache__/
+venv/
+__pycache__/
+app.db
+mongo.py
+config.py

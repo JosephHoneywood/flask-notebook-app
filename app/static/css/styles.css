@@ -1,0 +1,210 @@
+/* This CSS file is one half of the split of the stylings between the view of individual notes from the main notebook page held on index */
+
+@import "colors.css";
+
+body {
+    background-color: var(--lightblack);
+    background-size: cover;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Roboto', serif;
+}
+
+h1 {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+h3 {
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+
+hr {
+    border: 1px solid var(--lightgray);
+    width: 90%;
+}
+
+.site-container {
+    background-color: #121212;
+    width: 99%;
+    height: 99%;
+    margin: auto;
+    display: flex;
+    position: relative;
+    border-radius: 2px;
+}
+
+.menu-container {
+    width: 20%;
+    background-color: var(--lightblack);
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    border-radius: 3px;
+}
+
+.menu-container h1 {
+    color: white;
+}
+
+.notebook-container {
+    padding: 4px;
+    width: 50%;
+    border-radius: 2px;
+}
+
+.chapter-container {
+    padding: 4px;
+    width: 50%;
+}
+
+.notebooks, .chapters {
+    background-color: var(--lightblack);
+    color: white;
+    border-radius: 2px;
+    padding: 2px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    flex-grow: 1;
+    width: 100%;
+    margin: 2px;
+    background-color: var(--lightblack);
+    padding: 4px;
+    padding-left: 6px;
+    border-radius: 3px;
+    color: whitesmoke;
+}
+
+.menu-item.active {
+    color: var(--spotgreen);
+}
+
+.menu-item:hover {
+    font-weight: bolder;
+    color: var(--spotgreen);
+    cursor: pointer;
+}
+
+.note-container {
+    padding: 8px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.create.btn {
+    padding: 2px;
+    text-decoration: none;
+    margin: 2px;
+    border-radius: 2px;
+    background-color: var(--lightblack);
+    color: white;
+}
+
+.create.btn:hover {
+    color: var(--spotgreen);
+}
+
+.note-area {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    overflow-y: auto;
+    margin-top: 5px;
+    overflow-x: hidden;
+}
+
+.note {
+    background-color: whitesmoke;
+    margin: 4px;
+    border-radius: 3px;
+    padding: 5px;
+    padding-left: 15px;
+    width: 96%;
+    min-height: 200px;
+    box-shadow: 4px 0 5px -2px #888
+}
+
+.note-title-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.4rem;
+    padding: 0.5 0 0 0;
+}
+
+.note-title {
+    cursor: pointer;
+}
+
+.note > hr {
+    border: 1px solid grey;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.note-title:hover {
+    color: var(--spotgreen);
+}
+
+.note-edit {
+    margin-right: 15px;
+}
+
+p.note-body {
+    height: 8rem;
+    margin: 0;
+    max-height: 8rem;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    overflow-x: hidden;
+}
+
+.note-body > p {
+    margin: 0.5rem;
+}
+
+.note-footer-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+.note-tags, .note-date-info {
+    color: gray;
+    font-size: 12px;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: white var(--spotgreen);
+  }
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    background: black;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--spotgreen);
+    border-radius: 20px;
+    border: 3px solid var(--spotgreen);
+  }

@@ -1,0 +1,111 @@
+/* This CSS file is one half of the stylings between the view of individual notes from the main notebook page held on index */
+
+/* Colors imported from seperate style sheet */
+@import "colors.css";
+
+body {
+    background-color: var(--lightblack);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    max-height: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+hr {
+    margin: 0.3rem;
+}
+
+.note-container {
+    background: whitesmoke;
+    border: 1px solid black;
+    display: block;
+    width: 98%;
+    max-width: 98%;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    height: 95%;
+    /* max-height: 700px; */
+}
+
+.note-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+    fill: var(--lightblack);
+}
+
+svg:hover {
+    opacity: 50%;
+    fill: var(--spotgreen);
+    pointer-events: visible;
+    cursor: pointer;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+.note-body {
+    min-height: 550px;
+    max-height: 550px;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.panel {
+    margin-bottom: 0px;
+}
+
+.text-content {
+    margin: 0;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+button {
+    padding: 0.3rem;
+    margin: 0 0.2rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.edit {
+    background-color: var(--spotgreen);
+}
+
+button.delete {
+    background-color: #f98585;
+}
+
+button.save {
+    background-color: orange;
+}
+
+.hide {
+    display: none;
+}

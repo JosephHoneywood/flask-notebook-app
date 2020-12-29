@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Notebook</title>
+        <link rel="shortcut icon" href="#">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+
+    <body>
+        <div class="site-container">
+
+            {% block form %}{% endblock %}
+
+            <div class="menu-container">
+
+                <div class="notebook-container">
+
+                    <h1>Notebooks</h1>
+
+                    <hr>
+
+                    <div class="notebooks" data-notebooks>
+
+                        {% for nb in notebook_list %}
+
+                        <div class="notebook menu-item">{{ nb }}</div>
+   
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                <div class="chapter-container">
+
+                    <h1>Chapters</h1>
+
+                    <hr>
+
+                    <div class="chapters">
+
+                        {% for ch in chapters %}
+
+                            <div class="chapter menu-item">{{ ch }}</div>
+   
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="note-container">
+
+                <div class="menu-bar-container">
+                    <a href ="/createnote" class="create btn">Create Note</a>
+                </div>
+
+                <div class="note-area">
+
+                </div>
+            </div>
+
+        </div>
+        {% block content %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    </body>
+    
+</html>
